@@ -1,5 +1,5 @@
-# adb_python_alipay_AntForest
-蚂蚁森林自动收取能量、偷取能量、浇水（使用adb、python）
+# 蚂蚁森林自动收取能量、偷取能量、浇水
+蚂蚁森林自动收取能量、偷取能量、浇水（使用adb、python）adb_python_alipay_AntForest
 
 ## 涉及到的技术：
 1、python
