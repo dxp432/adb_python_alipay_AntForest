@@ -39,7 +39,7 @@ def matchImg(imgsrc, imgobj):  # imgsrc=原始图像，imgobj=待查找的图片
 
 如果发现截图包含这个图片就说明需要从头继续![](alipay_nomore.png)
 
-如果发现截图包含这个图片就说明需要点击，查看跟多好友![](alipay_lookForMoreFriends.png)
+如果发现截图包含这个图片就说明需要点击，查看更多好友![](alipay_lookForMoreFriends.png)
 
 如果发现截图包含这个图片就说明点击进行浇水![](alipay_water.png)
 
