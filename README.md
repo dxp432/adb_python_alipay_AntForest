@@ -23,6 +23,49 @@
 
 2、用python主要去判断手机送过来的截图是否是我要的，并找到坐标，让adb点击坐标。同理，通过手机adb送过来的截图，判断，通过点击进行自动收取能量、自动偷取能量、自动给指定的朋友浇水。
 
+## 部分代码：
+用python主要去判断手机送过来的截图是否是我要的，并找到坐标：
+对比两张图，找到坐标。
+```Python
+def matchImg(imgsrc, imgobj):  # imgsrc=原始图像，imgobj=待查找的图片
+    imsrc = ac.imread(imgsrc)
+    imobj = ac.imread(imgobj)
+    match_result = ac.find_template(imsrc, imobj, 0.9)  #0.9、confidence是精度，越小对比的精度就越低 {'confidence': 0.5435812473297119, 'rectangle': ((394, 384), (394, 416), (450, 384), (450, 416)), 'result': (422.0, 400.0)}
+    if match_result is not None:
+        match_result['shape'] = (imsrc.shape[1], imsrc.shape[0])  # 0为高，1为宽
+    return match_result
+```
+通过截图和下面的小图片对比，找到坐标：
+
+如果发现截图包含这个图片就说明需要从头继续![](alipay_nomore.png)
+
+如果发现截图包含这个图片就说明需要点击，查看跟多好友![](alipay_lookForMoreFriends.png)
+
+如果发现截图包含这个图片就说明点击进行浇水![](alipay_water.png)
+
+如果发现截图包含这个图片就说明需要点击去偷能量![](alipay_friend.png)
+
+adb截图、发送到电脑：
+```Python
+# 截图
+    os.popen('adb -s 66819679 shell screencap -p /storage/emulated/0/Documents/phoneScreencap.png')
+    time.sleep(1.5)
+    os.popen('adb -s 66819679 pull /storage/emulated/0/Documents/phoneScreencap.png')
+    time.sleep(1.5)
+```
+
+adb点击
+```Python
+os.popen('adb -s 66819679 shell input tap 135 250', 'r', 1)
+```
+
+adb滑动：
+```Python
+# 向下滑动
+    os.popen('adb -s 66819679 shell input swipe 520 300 520 1000')
+```
+
+
 ## 注意：
 如果想用在自己手机上，得修改几个地方：
 
