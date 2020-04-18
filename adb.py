@@ -981,7 +981,7 @@ def main():
         mytime = datetime.datetime.now()
 
         # 支付宝
-        if (mytime.hour == 7) or (mytime.hour == 8) or (mytime.hour == 10) or (mytime.hour == 9):
+        if (mytime.hour == 7) or (mytime.hour == 8) or (mytime.hour == 9) or (mytime.hour == 10):
             # 判断是不是第一次运行
             print("判断是不是第一次运行")
             print(firsttime)
