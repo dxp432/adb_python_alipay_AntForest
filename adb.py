@@ -906,12 +906,13 @@ def main():
         time.sleep(5)
         # 点击去提现
         print("点击去提现")
-        os.popen('adb -s 66819679 shell input tap 930 453', 'r', 1)
+        os.popen('adb -s 66819679 shell input tap 980 360', 'r', 1)
         time.sleep(3)
         # 点击提现
         print("点击提现长按钮")
         os.popen('adb -s 66819679 shell input tap 568 2205', 'r', 1)
         time.sleep(6)
+       
         print("点击提现长按钮")
         os.popen('adb -s 66819679 shell input tap 568 2205', 'r', 1)
         time.sleep(6)
@@ -928,7 +929,6 @@ def main():
 
     i = 0
     while 1 == 1:
-
         mytime = datetime.datetime.now()
         print("现在时间（）：" + str(mytime.date())+ str(mytime.minute))
 
@@ -959,6 +959,14 @@ def main():
       
         # 快看点
         if (mytime.hour == 4) or (mytime.hour == 5) or (mytime.hour == 21) or (mytime.hour == 22) or (mytime.hour == 6):
+            # 判断是不是第一次运行,提现
+            print("判断是不是第一次运行")
+            print(firsttime)
+            if firsttime == 1 and mytime.hour == 6:
+                firsttime = 0
+                print(firsttime)
+                shuabao_money()
+                kuaikandian_money()
             print("快看点开始")
             i = 0
             # 返回
@@ -982,14 +990,7 @@ def main():
 
         # 支付宝
         if (mytime.hour == 7) or (mytime.hour == 8) or (mytime.hour == 9) or (mytime.hour == 10):
-            # 判断是不是第一次运行
-            print("判断是不是第一次运行")
-            print(firsttime)
-            if firsttime == 1:
-                firsttime = 0
-                print(firsttime)
-                shuabao_money()
-                kuaikandian_money()
+
 
             i = 0
             # 返回好多次
