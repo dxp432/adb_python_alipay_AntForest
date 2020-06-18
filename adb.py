@@ -267,6 +267,24 @@ def main():
                 os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
                 time.sleep(3)
                 openalipay()
+            # 进入到动态界面了，得从头开始
+            if matchImg('phoneScreencap.png', 'trends.png') is not None:
+                print("trends" + str(
+                    matchImg('phoneScreencap.png', 'trends.png')['result'][0]) + ',' + str(
+                    matchImg('phoneScreencap.png', 'trends.png')['result'][1]))
+                # 返回
+                os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
+                time.sleep(0.7)
+                # 返回
+                os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
+                time.sleep(0.7)
+                # 返回
+                os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
+                time.sleep(0.7)
+                # 返回
+                os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
+                time.sleep(3)
+                openalipay()
 
             # # alipay_love因为网络等问题，如果出现这alipay_love图标就得从头再来。
             # if matchImg('phoneScreencap.png', 'alipay_love.png') is not None:
@@ -927,16 +945,60 @@ def main():
         time.sleep(3)
 
 
+    def comment():
+        print('---打开评论')
+        os.popen('adb -s 66819679 shell input tap 992 1575')
+        time.sleep(5)
+
+        print('---点击空白框')
+        os.popen('adb -s 66819679 shell input tap 108 2217')
+        time.sleep(5)
+
+        os.popen('adb -s 66819679 shell input tap 632 1930')
+        time.sleep(0.5)
+        os.popen('adb -s 66819679 shell input tap 700 1637')
+        time.sleep(0.5)
+        os.popen('adb -s 66819679 shell input tap 415 1940')
+        time.sleep(0.5)
+        os.popen('adb -s 66819679 shell input tap 700 1637')
+        time.sleep(0.5)
+        os.popen('adb -s 66819679 shell input tap 916 1636')
+        time.sleep(0.5)
+        os.popen('adb -s 66819679 shell input tap 592 2097')
+        time.sleep(1)
+
+        print('---点击icon')
+        for my_c in range(1,random.randint(5,15), 1):
+
+            os.popen('adb -s 66819679 shell input tap 60 1389')
+            time.sleep(0.5)
+
+        for my_c in range(1,random.randint(5,15), 1):
+            os.popen('adb -s 66819679 shell input tap 200 1389')
+            time.sleep(0.5)
+        
+        print('---点发送评论')
+        os.popen('adb -s 66819679 shell input tap 1000 1146')
+        time.sleep(3)
+
+        print('---返回视频')
+        os.popen('adb -s 66819679 shell input keyevent 4')
+        time.sleep(2)
+
+
+
     i = 0
     while 1 == 1:
         mytime = datetime.datetime.now()
         print("现在时间（）：" + str(mytime.date())+ str(mytime.minute))
-
-        # 刷宝
-        if (mytime.hour == 2) or (mytime.hour == 3) or (mytime.hour == 0) or (mytime.hour == 23) or (mytime.hour == 1) or (mytime.hour == 12) :
+    
+        # 刷宝        
+        if (mytime.hour == 2) or (mytime.hour == 3) or (mytime.hour == 1) or (mytime.hour == 14) or (mytime.hour == 5) or (mytime.hour == 0)   or (mytime.hour == 23) :
             print("刷宝开始")
             i = 0
             # 返回好多次
+            backback()
+            backback()
             backback()
             # 打开刷宝
             os.popen('adb -s 66819679 shell input tap 337 267', 'r', 1)
@@ -958,7 +1020,7 @@ def main():
         mytime = datetime.datetime.now()
       
         # 快看点
-        if (mytime.hour == 4) or (mytime.hour == 5) or (mytime.hour == 21) or (mytime.hour == 22) or (mytime.hour == 6):
+        if (mytime.hour == 4) or (mytime.hour == 21) or (mytime.hour == 22) or (mytime.hour == 6):
             # 判断是不是第一次运行,提现
             print("判断是不是第一次运行")
             print(firsttime)
@@ -989,9 +1051,7 @@ def main():
         mytime = datetime.datetime.now()
 
         # 支付宝
-        if (mytime.hour == 7) or (mytime.hour == 8) or (mytime.hour == 9) or (mytime.hour == 10):
-
-
+        if (mytime.hour == 7) or (mytime.hour == 8)  or (mytime.hour == 9) or (mytime.hour == 10):
             i = 0
             # 返回好多次
             backback()
@@ -1010,7 +1070,6 @@ def main():
         mytime = datetime.datetime.now()
 
         # 手机微博点赞
-
         myinttime = 25
         myinttime2 = 26
         if (mytime.hour == myinttime) or (mytime.hour == myinttime2):
