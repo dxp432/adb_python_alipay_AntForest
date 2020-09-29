@@ -43,6 +43,12 @@ def main():
         # 返回
         os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
         time.sleep(1)
+        # home
+        os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
+        time.sleep(3)
+        # home
+        os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
+        time.sleep(3)
 
     def manyclick():
         # 这里是在点击屏幕固定区域采集能量
@@ -329,6 +335,9 @@ def main():
                 print("alipay_no！" + str(
                     matchImg('phoneScreencap.png', 'alipay_no.png')['result'][0]) + ',' + str(
                     matchImg('phoneScreencap.png', 'alipay_no.png')['result'][1]))
+                # 返回
+                os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
+                time.sleep(3)
                 # 返回
                 os.popen('adb -s 66819679 shell input keyevent 4', 'r', 1)
                 time.sleep(3)
@@ -992,66 +1001,66 @@ def main():
         mytime = datetime.datetime.now()
         print("现在时间（）：" + str(mytime.date())+ str(mytime.minute))
     
-        # 刷宝        
-        if (mytime.hour == 2) or (mytime.hour == 3) or (mytime.hour == 1) or (mytime.hour == 14) or (mytime.hour == 5) or (mytime.hour == 0)   or (mytime.hour == 23) :
-            print("刷宝开始")
-            i = 0
-            # 返回好多次
-            backback()
-            backback()
-            backback()
-            # 打开刷宝
-            os.popen('adb -s 66819679 shell input tap 337 267', 'r', 1)
-            time.sleep(10)
-            for myy in range(1, 20, 1):
-                i = i + 1
-                shuabao()
-                mytime = datetime.datetime.now()
-                print("shuabao" + str(i) + "次。" + str(mytime))
-                # if myy == 1 :
-                #     shuabao_comment()
-                #     print("shuabao_comment")
-            time.sleep(1)
-            # 返回好多次
-            backback()
-            # home
-            os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
-            time.sleep(3)
-        mytime = datetime.datetime.now()
+        # # 刷宝        
+        # if (mytime.hour == 2) or (mytime.hour == 3) or (mytime.hour == 1) or (mytime.hour == 14) or (mytime.hour == 4) or (mytime.hour == 0)   or (mytime.hour == 23) :
+        #     print("刷宝开始")
+        #     i = 0
+        #     # 返回好多次
+        #     backback()
+        #     backback()
+        #     backback()
+        #     # 打开刷宝
+        #     os.popen('adb -s 66819679 shell input tap 337 267', 'r', 1)
+        #     time.sleep(10)
+        #     for myy in range(1, 20, 1):
+        #         i = i + 1
+        #         shuabao()
+        #         mytime = datetime.datetime.now()
+        #         print("shuabao" + str(i) + "次。" + str(mytime))
+        #         # if myy == 1 :
+        #         #     shuabao_comment()
+        #         #     print("shuabao_comment")
+        #     time.sleep(1)
+        #     # 返回好多次
+        #     backback()
+        #     # home
+        #     os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
+        #     time.sleep(3)
+        # mytime = datetime.datetime.now()
       
-        # 快看点
-        if (mytime.hour == 4) or (mytime.hour == 21) or (mytime.hour == 22) or (mytime.hour == 6):
-            # 判断是不是第一次运行,提现
-            print("判断是不是第一次运行")
-            print(firsttime)
-            if firsttime == 1 and mytime.hour == 6:
-                firsttime = 0
-                print(firsttime)
-                shuabao_money()
-                kuaikandian_money()
-            print("快看点开始")
-            i = 0
-            # 返回
-            print("返回" + str(mytime))
-            # 返回好多次
-            backback()
-            # 打开快看点
-            os.popen('adb -s 66819679 shell input tap 957 260', 'r', 1)
-            time.sleep(10)
-            for myy in range(1, 20, 1):
-                i = i + 1
-                kuaikandian()
-                mytime = datetime.datetime.now()
-                print("快看点" + str(i) + "次。" + str(mytime))
-            # 返回好多次
-            backback()
-            # home
-            os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
-            time.sleep(3)
-        mytime = datetime.datetime.now()
+        # # 快看点
+        # if (mytime.hour == 5) or (mytime.hour == 21) or (mytime.hour == 22) or (mytime.hour == 6):
+        #     # 判断是不是第一次运行,提现
+        #     print("判断是不是第一次运行")
+        #     print(firsttime)
+        #     if firsttime == 1 and mytime.hour == 6:
+        #         firsttime = 0
+        #         print(firsttime)
+        #         shuabao_money()
+        #         kuaikandian_money()
+        #     print("快看点开始")
+        #     i = 0
+        #     # 返回
+        #     print("返回" + str(mytime))
+        #     # 返回好多次
+        #     backback()
+        #     # 打开快看点
+        #     os.popen('adb -s 66819679 shell input tap 957 260', 'r', 1)
+        #     time.sleep(10)
+        #     for myy in range(1, 20, 1):
+        #         i = i + 1
+        #         kuaikandian()
+        #         mytime = datetime.datetime.now()
+        #         print("快看点" + str(i) + "次。" + str(mytime))
+        #     # 返回好多次
+        #     backback()
+        #     # home
+        #     os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
+        #     time.sleep(3)
+        # mytime = datetime.datetime.now()
 
         # 支付宝
-        if (mytime.hour == 7) or (mytime.hour == 8)  or (mytime.hour == 9) or (mytime.hour == 10):
+        if (mytime.hour == 6)  or (mytime.hour == 7) or (mytime.hour == 8)  or (mytime.hour == 9) or (mytime.hour == 10):
             i = 0
             # 返回好多次
             backback()
@@ -1069,33 +1078,33 @@ def main():
             time.sleep(3)
         mytime = datetime.datetime.now()
 
-        # 手机微博点赞
-        myinttime = 25
-        myinttime2 = 26
-        if (mytime.hour == myinttime) or (mytime.hour == myinttime2):
-            mytime = datetime.datetime.now()
-            i = 0
-            # 返回好多次
+        # # 手机微博点赞
+        # myinttime = 25
+        # myinttime2 = 26
+        # if (mytime.hour == myinttime) or (mytime.hour == myinttime2):
+        #     mytime = datetime.datetime.now()
+        #     i = 0
+        #     # 返回好多次
 
-            backback()
+        #     backback()
 
-            openWeibo()
-            for myy in range(1, 10000, 1):
-                print("for循环内")
-                mytime = datetime.datetime.now()
-                if (mytime.hour == myinttime) or (mytime.hour == myinttime2):
-                    Weibo_zan()
-                    print("是这个时间段")
-                else:
-                    print("不是这个时间段")
-                    break
+        #     openWeibo()
+        #     for myy in range(1, 10000, 1):
+        #         print("for循环内")
+        #         mytime = datetime.datetime.now()
+        #         if (mytime.hour == myinttime) or (mytime.hour == myinttime2):
+        #             Weibo_zan()
+        #             print("是这个时间段")
+        #         else:
+        #             print("不是这个时间段")
+        #             break
 
-            # home
-            os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
-            time.sleep(3)
+        #     # home
+        #     os.popen('adb -s 66819679 shell input keyevent 3', 'r', 1)
+        #     time.sleep(3)
         print("现在时间（）：" + str(datetime.datetime.now()))
         print("if outside _ timesleep。。。。。。。。")
-        time.sleep(3)
+        time.sleep(60)
 
 
 main()
